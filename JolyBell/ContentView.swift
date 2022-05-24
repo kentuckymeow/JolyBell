@@ -9,11 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image("slide")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 250, height: 250)
-            
+        Menu()
     }
 }
 

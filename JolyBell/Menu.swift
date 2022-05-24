@@ -9,9 +9,12 @@ import SwiftUI
 
 struct Menu: View {
     @StateObject var  HomeModel = HomeViewModel()
+    @State private var showingCartScreen = false
     var body: some View {
-        
+        NavigationView{
         VStack{
+            Spacer()
+                .frame(height: 50)
             HStack(spacing: 15){
                 TextField("Search",text:$HomeModel.search)
                 Image(systemName: "magnifyingglass")
@@ -28,9 +31,18 @@ struct Menu: View {
                 .padding(.trailing, 60)
             Spacer()
             
-            
-            
         }
+        .ignoresSafeArea()
+        .navigationBarItems(trailing: Button(action: {self.showingCartScreen.toggle()}, label: {
+            Image(systemName: "cart")
+                .renderingMode(.original)
+                .font(.system(size: 20))}))
+        .sheet(isPresented: $showingCartScreen,content: {
+            CartView(homeDate: HomeModel)})
+            
+        }.accentColor(Color.black)
+       
+        
     }
 }
 
