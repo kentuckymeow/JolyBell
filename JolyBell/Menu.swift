@@ -13,10 +13,10 @@ struct Menu: View {
     var body: some View {
         NavigationView{
         VStack{
-            Spacer()
-                .frame( height: 40)
+   //         Spacer()
+   //             .frame( height: 40)
             HStack(spacing: 15){
-                TextField("Search",text:$HomeModel.search)
+                TextField("Search",text: $HomeModel.search)
                 Image(systemName: "magnifyingglass")
                     .font(.title2)
                     .foregroundColor(.gray)
@@ -33,15 +33,16 @@ struct Menu: View {
             
             ScrollView {
                 
-                VStack(spacing: 25){
-                    ForEach(HomeModel.items) { item in
-                        Text(item.item_name)
+                VStack{
+                    ForEach(HomeModel.filtered) { item in
+                        itemView(item: item)
                     }
                     
                 }
             }
             
-        .ignoresSafeArea()
+       // .ignoresSafeArea()
+            .navigationBarTitle("Joly.Bell Collections'22")
         .navigationBarItems(trailing: Button(action: {self.showingCartScreen.toggle()}, label: {
             Image(systemName: "cart")
                 .renderingMode(.original)
@@ -50,12 +51,25 @@ struct Menu: View {
             CartView(homeDate: HomeModel)})
             
         }
-        .ignoresSafeArea()
+        //.ignoresSafeArea()
         .accentColor(Color.black)
         .onAppear(perform: {
             self.HomeModel.fetchData()
         })
-        }
+            
+        .onChange(of: HomeModel.search, perform: { value in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                if value == HomeModel.search && HomeModel.search != ""{
+                    //search the date
+                    HomeModel.filterData()
+                }
+            }
+            if  HomeModel.search == "" {
+                // we need to reset all data
+                
+                withAnimation(.linear) {
+                    
+                    HomeModel.filtered = HomeModel.items}}})}
         
     }
 }

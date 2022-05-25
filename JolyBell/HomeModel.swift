@@ -83,9 +83,19 @@ class HomeViewModel: ObservableObject {
                 let image = doc.get("item_image") as! String
                 let details = doc.get("item_details") as! String
                 
-                return Item(id: id, item_name: name, item_cost: cost, item_details: details, item_image: image)
-            })
+                return Item(id: id, item_name: name, item_cost: cost, item_details: details, item_image: image)})
             
+            self.filtered = self.items
+        }
+    }
+    
+    @Published var filtered: [Item] = []
+    
+    func filterData(){
+        
+        self.filtered = self.items.filter{
+            return
+               $0.item_name.lowercased().contains(self.search.lowercased())
         }
     }
     
