@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct Home: View {
+    @EnvironmentObject var viewModel:HomeViewModel
+    @State private var showingMenuView = false
+    
     var body: some View {
         VStack(spacing: 20){
             Image("slide")

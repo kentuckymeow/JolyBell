@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B8725F9EC7AC8E82CC7CE24 /* Pods_JolyBell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3B94FE55F2437060884C02 /* Pods_JolyBell.framework */; };
 		922CEB72283D84BE00CBF936 /* JolyBellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB71283D84BE00CBF936 /* JolyBellApp.swift */; };
 		922CEB74283D84BE00CBF936 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB73283D84BE00CBF936 /* ContentView.swift */; };
 		922CEB76283D84BF00CBF936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922CEB75283D84BF00CBF936 /* Assets.xcassets */; };
@@ -15,9 +16,11 @@
 		922CEB85283D8BE200CBF936 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB84283D8BE200CBF936 /* Menu.swift */; };
 		922CEB87283D8BFC00CBF936 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB86283D8BFC00CBF936 /* CartView.swift */; };
 		922CEB89283D8C2B00CBF936 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB88283D8C2B00CBF936 /* HomeModel.swift */; };
+		922CEB8B283D98C200CBF936 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39BD4446E6C5AAA229B5C269 /* Pods-JolyBell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JolyBell.release.xcconfig"; path = "Target Support Files/Pods-JolyBell/Pods-JolyBell.release.xcconfig"; sourceTree = "<group>"; };
 		922CEB6E283D84BE00CBF936 /* JolyBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JolyBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922CEB71283D84BE00CBF936 /* JolyBellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JolyBellApp.swift; sourceTree = "<group>"; };
 		922CEB73283D84BE00CBF936 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -28,6 +31,9 @@
 		922CEB84283D8BE200CBF936 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		922CEB86283D8BFC00CBF936 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		922CEB88283D8C2B00CBF936 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF3B94FE55F2437060884C02 /* Pods_JolyBell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JolyBell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5401422597E876049B203A9 /* Pods-JolyBell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JolyBell.debug.xcconfig"; path = "Target Support Files/Pods-JolyBell/Pods-JolyBell.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B8725F9EC7AC8E82CC7CE24 /* Pods_JolyBell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51C11A15214C73D50BFBD53C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF3B94FE55F2437060884C02 /* Pods_JolyBell.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8B0582089DBBCFB2DC1E05F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5401422597E876049B203A9 /* Pods-JolyBell.debug.xcconfig */,
+				39BD4446E6C5AAA229B5C269 /* Pods-JolyBell.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		922CEB65283D84BE00CBF936 = {
 			isa = PBXGroup;
 			children = (
 				922CEB70283D84BE00CBF936 /* JolyBell */,
 				922CEB6F283D84BE00CBF936 /* Products */,
+				8B0582089DBBCFB2DC1E05F5 /* Pods */,
+				51C11A15214C73D50BFBD53C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +95,7 @@
 				922CEB86283D8BFC00CBF936 /* CartView.swift */,
 				922CEB88283D8C2B00CBF936 /* HomeModel.swift */,
 				922CEB75283D84BF00CBF936 /* Assets.xcassets */,
+				922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */,
 				922CEB77283D84BF00CBF936 /* Preview Content */,
 			);
 			path = JolyBell;
@@ -88,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 922CEB7C283D84BF00CBF936 /* Build configuration list for PBXNativeTarget "JolyBell" */;
 			buildPhases = (
+				EEA4E455C2914EE642928BF7 /* [CP] Check Pods Manifest.lock */,
 				922CEB6A283D84BE00CBF936 /* Sources */,
 				922CEB6B283D84BE00CBF936 /* Frameworks */,
 				922CEB6C283D84BE00CBF936 /* Resources */,
+				9E23CD597CE9FB4E14C5FF8B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,12 +169,55 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922CEB8B283D98C200CBF936 /* GoogleService-Info.plist in Resources */,
 				922CEB79283D84BF00CBF936 /* Preview Assets.xcassets in Resources */,
 				922CEB76283D84BF00CBF936 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E23CD597CE9FB4E14C5FF8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JolyBell/Pods-JolyBell-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JolyBell/Pods-JolyBell-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JolyBell/Pods-JolyBell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEA4E455C2914EE642928BF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JolyBell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		922CEB6A283D84BE00CBF936 /* Sources */ = {
@@ -281,6 +354,7 @@
 		};
 		922CEB7D283D84BF00CBF936 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5401422597E876049B203A9 /* Pods-JolyBell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +385,7 @@
 		};
 		922CEB7E283D84BF00CBF936 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39BD4446E6C5AAA229B5C269 /* Pods-JolyBell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
