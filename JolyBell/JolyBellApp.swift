@@ -16,7 +16,9 @@ struct JolyBellApp: App {
     @UIApplicationDelegateAdaptor(AppDelagate.self) var delegate
     var body: some Scene {
         WindowGroup {
+            let viewModel = HomeViewModel()
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
