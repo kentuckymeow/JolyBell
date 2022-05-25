@@ -17,6 +17,7 @@
 		922CEB87283D8BFC00CBF936 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB86283D8BFC00CBF936 /* CartView.swift */; };
 		922CEB89283D8C2B00CBF936 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB88283D8C2B00CBF936 /* HomeModel.swift */; };
 		922CEB8B283D98C200CBF936 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */; };
+		922CEB8D283EDA9600CBF936 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB8C283EDA9600CBF936 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		922CEB86283D8BFC00CBF936 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		922CEB88283D8C2B00CBF936 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		922CEB8C283EDA9600CBF936 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AF3B94FE55F2437060884C02 /* Pods_JolyBell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JolyBell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5401422597E876049B203A9 /* Pods-JolyBell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JolyBell.debug.xcconfig"; path = "Target Support Files/Pods-JolyBell/Pods-JolyBell.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +64,6 @@
 				E5401422597E876049B203A9 /* Pods-JolyBell.debug.xcconfig */,
 				39BD4446E6C5AAA229B5C269 /* Pods-JolyBell.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -94,6 +95,7 @@
 				922CEB84283D8BE200CBF936 /* Menu.swift */,
 				922CEB86283D8BFC00CBF936 /* CartView.swift */,
 				922CEB88283D8C2B00CBF936 /* HomeModel.swift */,
+				922CEB8C283EDA9600CBF936 /* Item.swift */,
 				922CEB75283D84BF00CBF936 /* Assets.xcassets */,
 				922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */,
 				922CEB77283D84BF00CBF936 /* Preview Content */,
@@ -228,6 +230,7 @@
 				922CEB74283D84BE00CBF936 /* ContentView.swift in Sources */,
 				922CEB89283D8C2B00CBF936 /* HomeModel.swift in Sources */,
 				922CEB83283D899900CBF936 /* Home.swift in Sources */,
+				922CEB8D283EDA9600CBF936 /* Item.swift in Sources */,
 				922CEB85283D8BE200CBF936 /* Menu.swift in Sources */,
 				922CEB72283D84BE00CBF936 /* JolyBellApp.swift in Sources */,
 			);
