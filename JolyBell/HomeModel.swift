@@ -99,5 +99,60 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    //MARK: - cart functionality
+        
+        @Published var cartItems: [Cart] = []
+        
+        
+        func addToCart(item: Item) {
+            
+            self.items[getIndex(item: item, isCartIndex: false)].isAdded = !item.isAdded
+            self.filtered[getIndex(item: item, isCartIndex: false )].isAdded = !item.isAdded
+            if item.isAdded {
+                
+                self.cartItems.remove(at: getIndex(item: item, isCartIndex: true))
+                return
+                
+            }
+            self.cartItems.append(Cart(item: item, quantity: 1))}
+    
+    //MARK: - index func
+       
+       func getIndex(item: Item, isCartIndex: Bool) -> Int {
+           
+           let index = self.items.firstIndex { (item1) -> Bool in
+               
+               return item.id == item1.id
+           } ?? 0
+           let cartIndex = self.cartItems.firstIndex {
+               (item1) -> Bool in
+               return item.id == item1.item.id
+           } ?? 0
+           
+           return isCartIndex ? cartIndex : index
+           
+       }
+    
+    //MARK: - for our cart view
+       
+       
+       func calculateTotalPrice() -> String {
+       
+       var price: Float = 0
+       
+       cartItems.forEach { (item) in
+       
+       price += Float(item.quantity) * Float(truncating: item.item.item_cost)
+       }
+       return getPrice(value: price)
+       }
+       
+       func getPrice(value: Float) -> String {
+           
+           let format = NumberFormatter()
+           format.numberStyle = .currency
+           return format.string(from: NSNumber(value: value)) ?? ""
+           
+       }
     
 }

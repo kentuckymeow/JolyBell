@@ -13,6 +13,7 @@ struct Item: Identifiable {
     var item_cost: NSNumber
     var item_details: String
     var item_image:String
+    var isAdded:Bool = false
     
 }
 
