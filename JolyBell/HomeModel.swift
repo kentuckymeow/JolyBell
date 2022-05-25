@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import UIKit
 
 class HomeViewModel: ObservableObject {
     
@@ -62,6 +63,30 @@ class HomeViewModel: ObservableObject {
         try? authorization.signOut()
         
         self.signedIn = false
+    }
+    
+    //MARK: - function to fetch data
+    
+    @Published var items: [Item] = []
+    
+    func fetchData(){
+        
+        let db = Firestore.firestore()
+        db.collection("Items").getDocuments {
+            (snap,error) in
+            guard let itemData = snap else{return}
+            self.items = itemData.documents.compactMap({
+                (doc) -> Item? in
+                let id = doc.documentID
+                let name = doc.get("item_name") as! String
+                let cost = doc.get("item_cost") as! NSNumber
+                let image = doc.get("item_image") as! String
+                let details = doc.get("item_details") as! String
+                
+                return Item(id: id, item_name: name, item_cost: cost, item_details: details, item_image: image)
+            })
+            
+        }
     }
     
     

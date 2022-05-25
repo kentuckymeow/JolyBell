@@ -14,7 +14,7 @@ struct Menu: View {
         NavigationView{
         VStack{
             Spacer()
-                .frame(height: 50)
+                .frame( height: 40)
             HStack(spacing: 15){
                 TextField("Search",text:$HomeModel.search)
                 Image(systemName: "magnifyingglass")
@@ -31,7 +31,16 @@ struct Menu: View {
                 .padding(.trailing, 60)
             Spacer()
             
-        }
+            ScrollView {
+                
+                VStack(spacing: 25){
+                    ForEach(HomeModel.items) { item in
+                        Text(item.item_name)
+                    }
+                    
+                }
+            }
+            
         .ignoresSafeArea()
         .navigationBarItems(trailing: Button(action: {self.showingCartScreen.toggle()}, label: {
             Image(systemName: "cart")
@@ -40,8 +49,13 @@ struct Menu: View {
         .sheet(isPresented: $showingCartScreen,content: {
             CartView(homeDate: HomeModel)})
             
-        }.accentColor(Color.black)
-       
+        }
+        .ignoresSafeArea()
+        .accentColor(Color.black)
+        .onAppear(perform: {
+            self.HomeModel.fetchData()
+        })
+        }
         
     }
 }
