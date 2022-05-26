@@ -53,7 +53,7 @@ struct Menu: View {
                 .renderingMode(.original)
                 .font(.system(size: 20))}))
         .sheet(isPresented: $showingCartScreen,content: {
-            CartView(homeDate: HomeModel)})
+            CartView(homeData: HomeModel)})
             
         }
         //.ignoresSafeArea()
