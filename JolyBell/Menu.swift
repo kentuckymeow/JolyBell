@@ -36,6 +36,11 @@ struct Menu: View {
                 VStack{
                     ForEach(HomeModel.filtered) { item in
                         itemView(item: item)
+                        Button(action: {HomeModel.addToCart(item: item)}, label: {
+                        Image(systemName: item.isAdded ? "cart.badge.minus" : "cart.badge.plus")
+                        .renderingMode(.original)
+                    })
+                                            
                     }
                     
                 }

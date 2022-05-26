@@ -155,4 +155,56 @@ class HomeViewModel: ObservableObject {
            
        }
     
+       @Published var ordered = false
+       
+       @Published var field = ""
+       
+       func updateOrder() {
+           
+           let db = Firestore.firestore()
+           
+           if ordered {
+               ordered = false
+               
+               db.collection("Users").document(Auth.auth().currentUser!.uid).delete {
+                   (error) in
+                   if error != nil {
+                       self.ordered = true
+                   }
+               }
+               return
+           }
+           var details: [[String: Any]] = []
+           cartItems.forEach { (cart) in
+               details.append([
+               
+                   "item_name": cart.item.item_name,
+                   "item_quantity": cart.quantity,
+                   "item_cost": cart.item.item_cost])
+           }
+           ordered = true
+           
+           db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
+           
+               "ordered_items": details,
+               "total_cost": calculateTotalPrice(),
+               "Address": field])
+           
+           {
+               (error) in
+               if error != nil {
+                   self.ordered = false
+                   return}
+               print("success")
+           }
+           
+           
+           
+       }
+     
+       
+   
+
+
+    
 }
