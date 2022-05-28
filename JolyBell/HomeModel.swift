@@ -151,13 +151,28 @@ class HomeViewModel: ObservableObject {
            
            let format = NumberFormatter()
            format.numberStyle = .currency
+           format.currencySymbol = "$"
            return format.string(from: NSNumber(value: value)) ?? ""
            
        }
     
        @Published var ordered = false
        
-       @Published var field = ""
+       @Published var address = ""
+    
+       @Published var name = ""
+    
+       @Published var secondName = ""
+    
+       @Published var patronymic = ""
+    
+       @Published var country = ""
+    
+       @Published var city = ""
+    
+       @Published var postcode = ""
+    
+    
        
        func updateOrder() {
            
@@ -188,7 +203,13 @@ class HomeViewModel: ObservableObject {
            
                "ordered_items": details,
                "total_cost": calculateTotalPrice(),
-               "Address": field])
+               "Name": name,
+               "Secondname": secondName,
+               "Patronymic": patronymic,
+               "Country": country,
+               "City": city,
+               "Postcode": postcode,
+               "Address": address])
            
            {
                (error) in

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0B8725F9EC7AC8E82CC7CE24 /* Pods_JolyBell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3B94FE55F2437060884C02 /* Pods_JolyBell.framework */; };
+		921ECFDB28429FA300947801 /* FuturaNewBook-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 921ECFD728429FA200947801 /* FuturaNewBook-Reg.ttf */; };
+		921ECFDC28429FA300947801 /* FuturaNewDemi-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 921ECFD828429FA200947801 /* FuturaNewDemi-Reg.ttf */; };
+		921ECFDD28429FA300947801 /* FuturaNewLight-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 921ECFD928429FA200947801 /* FuturaNewLight-Reg.ttf */; };
+		921ECFDE28429FA300947801 /* FuturaNewMedium-Reg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 921ECFDA28429FA300947801 /* FuturaNewMedium-Reg.ttf */; };
+		921ECFE02842A0B900947801 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921ECFDF2842A0B900947801 /* FontsManager.swift */; };
 		922CEB72283D84BE00CBF936 /* JolyBellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB71283D84BE00CBF936 /* JolyBellApp.swift */; };
 		922CEB74283D84BE00CBF936 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB73283D84BE00CBF936 /* ContentView.swift */; };
 		922CEB76283D84BF00CBF936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 922CEB75283D84BF00CBF936 /* Assets.xcassets */; };
@@ -25,6 +30,11 @@
 
 /* Begin PBXFileReference section */
 		39BD4446E6C5AAA229B5C269 /* Pods-JolyBell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JolyBell.release.xcconfig"; path = "Target Support Files/Pods-JolyBell/Pods-JolyBell.release.xcconfig"; sourceTree = "<group>"; };
+		921ECFD728429FA200947801 /* FuturaNewBook-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuturaNewBook-Reg.ttf"; sourceTree = "<group>"; };
+		921ECFD828429FA200947801 /* FuturaNewDemi-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuturaNewDemi-Reg.ttf"; sourceTree = "<group>"; };
+		921ECFD928429FA200947801 /* FuturaNewLight-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuturaNewLight-Reg.ttf"; sourceTree = "<group>"; };
+		921ECFDA28429FA300947801 /* FuturaNewMedium-Reg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuturaNewMedium-Reg.ttf"; sourceTree = "<group>"; };
+		921ECFDF2842A0B900947801 /* FontsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		922CEB6E283D84BE00CBF936 /* JolyBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JolyBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		922CEB71283D84BE00CBF936 /* JolyBellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JolyBellApp.swift; sourceTree = "<group>"; };
 		922CEB73283D84BE00CBF936 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +83,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		921ECFD228429E1000947801 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				921ECFD728429FA200947801 /* FuturaNewBook-Reg.ttf */,
+				921ECFD828429FA200947801 /* FuturaNewDemi-Reg.ttf */,
+				921ECFD928429FA200947801 /* FuturaNewLight-Reg.ttf */,
+				921ECFDA28429FA300947801 /* FuturaNewMedium-Reg.ttf */,
+				921ECFDF2842A0B900947801 /* FontsManager.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		922CEB65283D84BE00CBF936 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +116,7 @@
 		922CEB70283D84BE00CBF936 /* JolyBell */ = {
 			isa = PBXGroup;
 			children = (
+				921ECFD228429E1000947801 /* Fonts */,
 				922CEB81283D868000CBF936 /* Info.plist */,
 				922CEB71283D84BE00CBF936 /* JolyBellApp.swift */,
 				922CEB73283D84BE00CBF936 /* ContentView.swift */,
@@ -185,8 +208,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921ECFDD28429FA300947801 /* FuturaNewLight-Reg.ttf in Resources */,
+				921ECFDB28429FA300947801 /* FuturaNewBook-Reg.ttf in Resources */,
+				921ECFDC28429FA300947801 /* FuturaNewDemi-Reg.ttf in Resources */,
 				922CEB8B283D98C200CBF936 /* GoogleService-Info.plist in Resources */,
 				922CEB79283D84BF00CBF936 /* Preview Assets.xcassets in Resources */,
+				921ECFDE28429FA300947801 /* FuturaNewMedium-Reg.ttf in Resources */,
 				922CEB76283D84BF00CBF936 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +269,7 @@
 			files = (
 				922CEB94283EF6F400CBF936 /* CartModel.swift in Sources */,
 				922CEB87283D8BFC00CBF936 /* CartView.swift in Sources */,
+				921ECFE02842A0B900947801 /* FontsManager.swift in Sources */,
 				922CEB74283D84BE00CBF936 /* ContentView.swift in Sources */,
 				922CEB89283D8C2B00CBF936 /* HomeModel.swift in Sources */,
 				922CEB8F283EE2DF00CBF936 /* itemView.swift in Sources */,

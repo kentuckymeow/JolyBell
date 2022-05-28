@@ -10,18 +10,33 @@ import SwiftUI
 struct Menu: View {
     @StateObject var  HomeModel = HomeViewModel()
     @State private var showingCartScreen = false
+    
+    init() {
+            
+           
+            // 2.
+            UINavigationBar.appearance().largeTitleTextAttributes = [
+                //.foregroundColor: UIColor.darkGray,
+                .font : UIFont(name:"Futura-Bold", size: 30)!]
+                    
+            // 3.
+           
+        }
+    
     var body: some View {
         NavigationView{
         VStack{
    //         Spacer()
    //             .frame( height: 40)
-            HStack(spacing: 15){
-                TextField("Search",text: $HomeModel.search)
+            HStack(spacing: 50){
+                TextField("Поиск",text: $HomeModel.search)
+                    .font(.custom(FontsManager.newLight, size: 15))
                 Image(systemName: "magnifyingglass")
                     .font(.title2)
                     .foregroundColor(.gray)
-                Spacer()
-                    .frame(width:40)
+                    .frame(width: 40)
+                //Spacer()
+                    
                 
             }
             .padding(.horizontal)
@@ -29,6 +44,7 @@ struct Menu: View {
             Divider()
                 .frame(width: 325)
                 .padding(.trailing, 60)
+            Spacer()
             Spacer()
             
             ScrollView {
@@ -47,13 +63,15 @@ struct Menu: View {
             }
             
        // .ignoresSafeArea()
-            .navigationBarTitle("Joly.Bell Collections'22")
+            .navigationBarTitle("Каталог")
         .navigationBarItems(trailing: Button(action: {self.showingCartScreen.toggle()}, label: {
             Image(systemName: "cart")
                 .renderingMode(.original)
                 .font(.system(size: 20))}))
         .sheet(isPresented: $showingCartScreen,content: {
             CartView(homeData: HomeModel)})
+            
+            
             
         }
         //.ignoresSafeArea()
@@ -78,6 +96,8 @@ struct Menu: View {
         
     }
 }
+
+
 
 struct Menu_Previews: PreviewProvider {
     static var previews: some View {

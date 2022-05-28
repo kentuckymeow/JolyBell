@@ -15,9 +15,8 @@ struct CartView: View {
         NavigationView {
             VStack{
                 HStack(spacing : 20){
-                    Text("My Cart")
-                        .font(.title)
-                        .fontWeight(.heavy)
+                    Text("Корзина")
+                        .font(.custom("Futura-Bold", size: 30))
                         .foregroundColor(.black)
                     Spacer()
                 }
@@ -35,7 +34,7 @@ struct CartView: View {
                                     .cornerRadius(15)
                                 VStack(alignment: .leading, spacing: 10) {
                                     Text(cart.item.item_name)
-                                        .fontWeight(.semibold)
+                                        .font(.custom(FontsManager.newLight, size: 15))
                                         .foregroundColor(.gray)
                                         .lineLimit(2)
                                     HStack(spacing: 15){
@@ -85,8 +84,8 @@ struct CartView: View {
                     
                     VStack {
                         HStack {
-                            Text("Total")
-                                .fontWeight(.heavy)
+                            Text("ИТОГО:")
+                                .font(.custom(FontsManager.newLight, size: 20))
                                 .foregroundColor(.gray)
                             Spacer()
                             
@@ -99,9 +98,8 @@ struct CartView: View {
                         
                         
                         Button(action: homeData.updateOrder) {
-                            Text(homeData.ordered ? "Cancel Order" : "Check Out")
-                                .font(.title2)
-                                .fontWeight(.heavy)
+                            Text(homeData.ordered ? "Отменить заказ" : "Заказать")
+                                .font(.custom("Futura-Bold", size: 20))
                                 .foregroundColor(.white)
                                 .padding(.vertical)
                                 .frame(width: 300)
@@ -114,14 +112,32 @@ struct CartView: View {
                     
                 }
                 
-                Text("Enter Your Address")
+                Text("Введите данные для доставки")
+                    .font(.custom("Futura-Bold", size: 15))
+                    .tracking(2)
                 Form {
-                    TextField("enter your address", text: $homeData.field)
+                    TextField("ИМЯ", text: $homeData.name)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    TextField("ФАМИЛИЯ", text: $homeData.secondName)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    TextField("ОТЧЕСТВО", text: $homeData.patronymic)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    TextField("СТРАНА", text: $homeData.country)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    TextField("ГОРОД", text: $homeData.city)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    TextField("ПОЧТОВЫЙ ИНДЕКС", text: $homeData.postcode)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    TextField("АДРЕС", text: $homeData.address)
+                        .font(.custom(FontsManager.newLight, size: 15))
+                    
                 }
                 
             }
+       //.navigationBarItems(leading: Button(action: {presentationMode.wrappedValue.dismiss()}, label: { Image(systemName: "xmark")
+          // }).accentColor(Color.black), trailing: EditButton())
             .navigationBarItems(leading: Button(action: {presentationMode.wrappedValue.dismiss()}, label: { Image(systemName: "xmark")
-            }), trailing: EditButton())
+                      }).accentColor(Color.black))
             
         }
         

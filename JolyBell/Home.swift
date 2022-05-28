@@ -28,28 +28,30 @@ struct Home: View {
                 
                 Button(action: {self.showingMenuView.toggle()}, label: {
                     Text("МЕНЮ")
-                        .font(.body)
+                        .font(.custom(FontsManager.newBook, size: 17))
                         .foregroundColor(.white)
                         .padding()
                         .clipShape(Rectangle())
-                        .frame(width: 400)
+                        .frame(width: 400,alignment: .center)
                         .background(Color.black)
                         .cornerRadius(45)
-                        .padding()
+                       // .padding()
                 })
                     .sheet(isPresented: $showingMenuView, content: {
                         Menu()
                         
                     })
-                    .padding()
+                   // .padding()
                 Button(action: {viewModel.signOut()}, label: {
-                    Text("Выход")
-                        .font(.body)
+                    Text("ВЫХОД")
+                        .font(.custom(FontsManager.newBook, size: 17))
                         .foregroundColor(.white)
-                        .padding()
+                       // .padding()
                         .clipShape(Rectangle())
-                        .frame(width: 600)
+                        .frame(width: 300, height: 50, alignment: .center)
                         .background(Color.black)
+                        .cornerRadius(45)
+                        .padding()
                 })
                 
             }
@@ -76,31 +78,50 @@ struct SigningIn: View {
         VStack {
             
           Text("АВТОРИЗАЦИЯ")
-                .font(.largeTitle)
-                .fontWeight(.medium)
+                .font(.custom(FontsManager.newDemi, size: 30))
+                .fontWeight(.bold)
+                
                 .padding()
             
           Text("ЭЛ.ПОЧТА")
-                .font(.caption)
-                .fontWeight(.medium)
-                .padding()
+                .font(.custom(FontsManager.newLight, size: 12))
+                //.fontWeight(.medium)
+                //.padding()
           TextField("введите свою почту",text: $email)
+                .font(.custom(FontsManager.newLight, size: 15))
                 .disableAutocorrection(true)
                 .autocapitalization(.none)
+                .frame(height: 55)
+                .textFieldStyle(PlainTextFieldStyle())
+                .padding([.horizontal], 7)
+               // .cornerRadius(16)
+                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+               // .padding([.horizontal], 24)
+                
                 .padding()
             
           Text("ПАРОЛЬ")
-                .font(.caption)
-                .fontWeight(.medium)
+                .font(.custom(FontsManager.newLight, size: 12))
+                //.padding()
           SecureField("введите свой пароль",text: $password)
-                  .disableAutocorrection(true)
-                  .autocapitalization(.none)
-                  .padding()
+                .font(.custom(FontsManager.newLight, size: 15))
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
+                .frame(height: 55)
+                .textFieldStyle(PlainTextFieldStyle())
+                .padding([.horizontal], 7)
+               // .cornerRadius(16)
+                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+               // .padding([.horizontal], 24)
+               
+                .padding()
+            
             Button(action: {
                 guard !email.isEmpty, !password.isEmpty else{return}
                 viewModel.signIn(email: email, password: password)
             }, label: {
                 Text("ВОЙТИ")
+                    .font(.custom(FontsManager.newBook, size: 17))
                     .padding()
                     .foregroundColor(.white)
                     .clipShape(Rectangle())
@@ -111,7 +132,7 @@ struct SigningIn: View {
             
             Button(action: {self.showingRegesterView.toggle()}, label: {
                 Text("БЫСТРАЯ РЕГИСТРАЦИЯ")
-                    .font(.body)
+                    .font(.custom(FontsManager.newBook, size: 17))
                     .foregroundColor(.white)
                     .padding()
                     .clipShape(Rectangle())

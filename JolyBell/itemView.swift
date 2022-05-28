@@ -23,14 +23,14 @@ struct itemView: View {
             
             VStack(spacing: 8){
                 Text(item.item_name)
-                    .font(.body)
-                    .fontWeight(.medium)
+                    .font(.custom(FontsManager.newLight, size: 15))
+                    .tracking(3)
                     .foregroundColor(.black)
                 HStack{
-                    Text("RUB \(item.item_cost)")
-                        .font(.caption)
+                    Text("$\(item.item_cost)")
+                        .font(.custom("Futura-Bold", size: 15))
                         .foregroundColor(.black)
-                        .fontWeight(.bold)
+                        
                     //Spacer()
                 }
                 
