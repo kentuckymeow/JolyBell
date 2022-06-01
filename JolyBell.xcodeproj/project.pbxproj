@@ -26,6 +26,7 @@
 		922CEB8F283EE2DF00CBF936 /* itemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB8E283EE2DF00CBF936 /* itemView.swift */; };
 		922CEB92283EE43500CBF936 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 922CEB91283EE43500CBF936 /* SDWebImageSwiftUI */; };
 		922CEB94283EF6F400CBF936 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CEB93283EF6F400CBF936 /* CartModel.swift */; };
+		92B11643284517CE00C3414D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B11642284517CE00C3414D /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		922CEB8C283EDA9600CBF936 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		922CEB8E283EE2DF00CBF936 /* itemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemView.swift; sourceTree = "<group>"; };
 		922CEB93283EF6F400CBF936 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		92B11642284517CE00C3414D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF3B94FE55F2437060884C02 /* Pods_JolyBell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JolyBell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5401422597E876049B203A9 /* Pods-JolyBell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JolyBell.debug.xcconfig"; path = "Target Support Files/Pods-JolyBell/Pods-JolyBell.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +132,7 @@
 				922CEB75283D84BF00CBF936 /* Assets.xcassets */,
 				922CEB8A283D98C200CBF936 /* GoogleService-Info.plist */,
 				922CEB77283D84BF00CBF936 /* Preview Content */,
+				92B11642284517CE00C3414D /* Launch Screen.storyboard */,
 			);
 			path = JolyBell;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			files = (
 				921ECFDD28429FA300947801 /* FuturaNewLight-Reg.ttf in Resources */,
 				921ECFDB28429FA300947801 /* FuturaNewBook-Reg.ttf in Resources */,
+				92B11643284517CE00C3414D /* Launch Screen.storyboard in Resources */,
 				921ECFDC28429FA300947801 /* FuturaNewDemi-Reg.ttf in Resources */,
 				922CEB8B283D98C200CBF936 /* GoogleService-Info.plist in Resources */,
 				922CEB79283D84BF00CBF936 /* Preview Assets.xcassets in Resources */,
@@ -412,11 +416,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JolyBell/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,11 +449,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = JolyBell/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -42,11 +42,11 @@ class HomeViewModel: ObservableObject {
     }
     
     
-    func signUp(email:String, password:String ) {
+    func signUp(email:String, password:String) {
         
         authorization.createUser(withEmail: email, password: password) { [weak self] result, error in
             
-            guard result != nil,  error == nil else {
+            guard result != nil,  error == nil else  {
                 return
             }
             

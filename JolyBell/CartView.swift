@@ -127,6 +127,7 @@ struct CartView: View {
                     TextField("ГОРОД", text: $homeData.city)
                         .font(.custom(FontsManager.newLight, size: 15))
                     TextField("ПОЧТОВЫЙ ИНДЕКС", text: $homeData.postcode)
+                        .keyboardType(.numberPad)
                         .font(.custom(FontsManager.newLight, size: 15))
                     TextField("АДРЕС", text: $homeData.address)
                         .font(.custom(FontsManager.newLight, size: 15))
@@ -143,6 +144,7 @@ struct CartView: View {
         
     }
 }
+
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
