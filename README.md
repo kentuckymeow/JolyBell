@@ -32,14 +32,14 @@ It is written entirely in SwiftUI with Firebase Database and Firebase Authentica
 
 ## Errors
 
-# Also added checks for entering account data and if they are not followed, it gives errors
+ Also added checks for entering account data and if they are not followed, it gives errors
 
 <img width="312" alt="Снимок экрана 2022-06-06 в 23 42 37" src="https://user-images.githubusercontent.com/95465502/172246016-ce5ba968-d442-430d-81b5-2f77a356b039.png">
 <img width="314" alt="Снимок экрана 2022-06-06 в 23 42 58" src="https://user-images.githubusercontent.com/95465502/172246026-02178ab5-7148-40c5-a2e6-1a13ab5ddbf2.png">
 <img width="311" alt="Снимок экрана 2022-06-06 в 23 43 37" src="https://user-images.githubusercontent.com/95465502/172246031-d549e43d-e832-4a9a-9294-9d451cd4a3c4.png">
 <img width="310" alt="Снимок экрана 2022-06-06 в 23 43 58" src="https://user-images.githubusercontent.com/95465502/172246040-b532cc28-e2ef-44ac-a255-5e80437f9414.png">
 
-# There are also errors when creating an account
+ There are also errors when creating an account
 
 <img width="318" alt="Снимок экрана 2022-06-06 в 23 44 58" src="https://user-images.githubusercontent.com/95465502/172246923-b9139b49-a3be-4fd6-b0b6-0a7334e6a91e.png">
 <img width="318" alt="Снимок экрана 2022-06-06 в 23 45 24" src="https://user-images.githubusercontent.com/95465502/172246946-e3307221-c0ed-4b2c-887b-98fd9bab13bf.png">
