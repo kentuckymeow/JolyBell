@@ -13,30 +13,23 @@ struct Menu: View {
     
     init() {
             
-           
-            // 2.
             UINavigationBar.appearance().largeTitleTextAttributes = [
                 //.foregroundColor: UIColor.darkGray,
                 .font : UIFont(name:"Futura-Bold", size: 30)!]
-                    
-            // 3.
            
         }
     
     var body: some View {
         NavigationView{
         VStack{
-   //         Spacer()
-   //             .frame( height: 40)
+   
             HStack(spacing: 50){
-                TextField("Поиск",text: $HomeModel.search)
+                TextField("Search",text: $HomeModel.search)
                     .font(.custom(FontsManager.newLight, size: 15))
                 Image(systemName: "magnifyingglass")
                     .font(.title2)
                     .foregroundColor(.gray)
                     .frame(width: 40)
-                //Spacer()
-                    
                 
             }
             .padding(.horizontal)
@@ -47,7 +40,7 @@ struct Menu: View {
             Spacer()
             Spacer()
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
                 VStack{
                     ForEach(HomeModel.filtered) { item in
@@ -60,10 +53,10 @@ struct Menu: View {
                     }
                     
                 }
+                
             }
             
-       // .ignoresSafeArea()
-            .navigationBarTitle("Каталог")
+            .navigationBarTitle("CATALOG")
         .navigationBarItems(trailing: Button(action: {self.showingCartScreen.toggle()}, label: {
             Image(systemName: "cart")
                 .renderingMode(.original)
@@ -74,7 +67,7 @@ struct Menu: View {
             
             
         }
-        //.ignoresSafeArea()
+       
         .accentColor(Color.black)
         .onAppear(perform: {
             self.HomeModel.fetchData()
@@ -92,7 +85,13 @@ struct Menu: View {
                 
                 withAnimation(.linear) {
                     
-                    HomeModel.filtered = HomeModel.items}}})}
+                    HomeModel.filtered = HomeModel.items}
+                
+            }
+            
+        })
+            
+        }
         
     }
 }

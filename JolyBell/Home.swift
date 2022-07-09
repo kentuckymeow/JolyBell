@@ -12,6 +12,7 @@ struct Home: View {
     @EnvironmentObject var viewModel:HomeViewModel
     @State private var showingMenuView = false
     
+    
     var body: some View {
         VStack(spacing: 20){
             if viewModel.signedIn {
@@ -27,15 +28,15 @@ struct Home: View {
             Spacer()
                 
                 Button(action: {self.showingMenuView.toggle()}, label: {
-                    Text("МЕНЮ")
+                    Text("MENU")
                         .font(.custom(FontsManager.newBook, size: 17))
                         .tracking(2)
                         .foregroundColor(.white)
                         .padding()
                         .clipShape(Rectangle())
-                        .frame(width: 400,alignment: .center)
+                        .frame(width: 380,alignment: .center)
                         .background(Color.black)
-                        .cornerRadius(45)
+                        .cornerRadius(10)
                        // .padding()
                 })
                     .sheet(isPresented: $showingMenuView, content: {
@@ -44,7 +45,7 @@ struct Home: View {
                     })
                    // .padding()
                 Button(action: {viewModel.signOut()}, label: {
-                    Text("ВЫХОД")
+                    Text("EXIT")
                         .font(.custom(FontsManager.newBook, size: 17))
                         .tracking(2)
                         .foregroundColor(.white)
@@ -52,7 +53,7 @@ struct Home: View {
                         .clipShape(Rectangle())
                         .frame(width: 300, height: 50, alignment: .center)
                         .background(Color.black)
-                        .cornerRadius(45)
+                        .cornerRadius(10)
                         .padding()
                 })
                 
@@ -82,192 +83,7 @@ struct SigningIn: View {
     
     var body: some View {
         
-//        ZStack{
-//
-//        VStack {
-//
-//          Text("АВТОРИЗАЦИЯ")
-//                .font(.custom(FontsManager.newDemi, size: 30))
-//                .tracking(2)
-//                //.fontWeight(.bold)
-//
-//                .padding()
-//
-//          Text("ЭЛ.ПОЧТА")
-//                .font(.custom(FontsManager.newLight, size: 12))
-//                .tracking(2)
-//                //.fontWeight(.medium)
-//                //.padding()
-//          TextField("",text: $email)
-//                .font(.custom(FontsManager.newLight, size: 15))
-//                 .disableAutocorrection(true)
-////                .autocapitalization(.none)
-////                //.frame(height: 55)
-////                .textFieldStyle(PlainTextFieldStyle())
-////                //.padding([.horizontal], 7)
-////               // .cornerRadius(16)
-////                //.overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
-////                .background(RoundedRectangle(cornerRadius: 16).stroke(self.password != "" ? Color("Color") : self.color,lineWidth: 2))
-////               // .padding([.horizontal], 24)
-//                .autocapitalization(.none)
-//                .padding()
-//                .frame(width:370)
-//                .background(RoundedRectangle(cornerRadius: 16).stroke(self.email != "" ? Color("Color") : self.color,lineWidth: 2))
-//                //.padding(.top, 25)
-//
-//                .padding()
-//
-//          Text("ПАРОЛЬ")
-//                .font(.custom(FontsManager.newLight, size: 12))
-//                .tracking(2)
-//                //.padding(.bottom,15)
-//
-//            HStack(spacing: 15){
-//                VStack{
-//
-//                    if self.visible{
-//
-//                        TextField("", text: self.$password)
-//                        .font(.custom(FontsManager.newLight, size: 15))
-//                        .autocapitalization(.none)
-//                        .disableAutocorrection(true)
-//                    }
-//                    else{
-//
-//                        SecureField("", text: self.$password)
-//                        .font(.custom(FontsManager.newLight, size: 15))
-//                        .autocapitalization(.none)
-//                        .disableAutocorrection(true)
-//                    }
-//                }
-//                Button(action: {
-//
-//                    self.visible.toggle()
-//
-//                }) {
-//
-//                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-//                        .foregroundColor(self.color)
-//                }
-//            }
-//            .padding()
-//            .frame(width:370)
-//            .background(RoundedRectangle(cornerRadius: 16).stroke(self.password != "" ? Color("Color") : self.color,lineWidth: 2))
-//           .padding(.top,15 )
-//
-//            HStack{
-//
-//                Spacer()
-//
-//                Button(action: {
-//
-//                   // self.reset()
-//
-//                }) {
-//
-//                    Text("Забыли пароль?")
-//                        .font(.custom(FontsManager.newLight, size: 15))
-//                        .tracking(2)
-//                        .underline()
-//                        .foregroundColor(Color("Color"))
-//                        .opacity(0.5)
-//                        .padding(.trailing,16)
-//                }
-//            }
-//            .padding(.top, 20)
-//
-//
-//
-////          SecureField("введите свой пароль",text: $password)
-////                .font(.custom(FontsManager.newLight, size: 15))
-////                .disableAutocorrection(true)
-////                .autocapitalization(.none)
-////                .frame(height: 55)
-////                .textFieldStyle(PlainTextFieldStyle())
-////                .padding([.horizontal], 7)
-////               // .cornerRadius(16)
-////                .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
-////               // .padding([.horizontal], 24)
-//
-//                .padding()
-//
-//            Button(action: {
-//
-//                self.verify()
-//
-//                guard !email.isEmpty, !password.isEmpty else{return}
-//                viewModel.signIn(email: email, password: password)
-//
-//
-//
-//            }, label: {
-//                Text("ВОЙТИ")
-//                    .font(.custom(FontsManager.newBook, size: 17))
-//                    .tracking(2)
-//                    .padding()
-//                    .foregroundColor(.white)
-//                    .clipShape(Rectangle())
-//                    .frame(width: 250)
-//                    .background(Color.black)
-//                    .cornerRadius(45)
-//            })
-//
-//            Button(action: {self.showingRegesterView.toggle()}, label: {
-//                Text("БЫСТРАЯ РЕГИСТРАЦИЯ")
-//                    .font(.custom(FontsManager.newBook, size: 17))
-//                    .tracking(2)
-//                    .foregroundColor(.white)
-//                    .padding()
-//                    .clipShape(Rectangle())
-//                    .frame(width: 400)
-//                    .background(Color.black)
-//                    .cornerRadius(45)
-//                    .padding()
-//
-//
-//            })
-//                .sheet(isPresented: $showingRegesterView, content: {
-//                   SigningUp()
-//                })
-//
-//               Spacer()
-//
-//
-//
-//        }
-//        if self.alert{
-//
-//            ErrorView(alert: self.$alert, error: self.$error)
-//          }
-//        }
-//
-//    }
-//    func verify() {
-//
-//        if self.email != "" && self.password != ""{
-//
-//                Auth.auth().signIn(withEmail: self.email, password: self.password) { (res, err) in
-//
-//                    Auth.auth().languageCode = "fr"
-//                   if err != nil{
-//                       self.error = (err!.localizedDescription)
-//                        self.alert.toggle()
-//                       return
-//                }
-//
-//                print("success")
-//                   UserDefaults.standard.set(true, forKey: "status")
-//                   NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-//    }
-//        }
-//        else{
-//
-//            self.error = "Пожалуйста, заполните все поля правильно"
-//            self.alert.toggle()
-//        }
-//
-//    }
-//
+
         ZStack{
             
             ZStack(alignment: .topTrailing) {
@@ -282,12 +98,12 @@ struct SigningIn: View {
                             .frame(width: 200, height: 200)
                         
                         Text("Log in to your account")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(self.color)
+                            .font(.custom("Futura-Bold", size: 30))
+                            .foregroundColor(Color(.black))
                             .padding(.top, 35)
                         
                         TextField("Email", text: self.$email)
+                        .font(.custom(FontsManager.newLight, size: 15))
                         .autocapitalization(.none)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color("Color") : self.color,lineWidth: 2))
@@ -301,11 +117,13 @@ struct SigningIn: View {
                                     
                                     TextField("Password", text: self.$password)
                                     .autocapitalization(.none)
+                                    .font(.custom(FontsManager.newLight, size: 15))
                                 }
                                 else{
                                     
                                     SecureField("Password", text: self.$password)
                                     .autocapitalization(.none)
+                                    .font(.custom(FontsManager.newLight, size: 15))
                                 }
                             }
                             
@@ -313,8 +131,8 @@ struct SigningIn: View {
                                 
                                 self.visible.toggle()
                                 
-                                guard !email.isEmpty, !password.isEmpty else{return}
-                                viewModel.signIn(email: email, password: password)
+                               // guard !email.isEmpty, !password.isEmpty else{return}
+                              //  viewModel.signIn(email: email, password: password)
                                 
                             }) {
                                 
@@ -348,17 +166,19 @@ struct SigningIn: View {
                             
                             self.verify()
                             
-                            guard !email.isEmpty, !password.isEmpty else{return}
+                           guard !email.isEmpty, !password.isEmpty else{return}
                             viewModel.signIn(email: email, password: password)
                             
                         }) {
                             
                             Text("Log in")
+                                .font(.custom(FontsManager.newBook , size: 17))
                                 .foregroundColor(.white)
                                 .padding(.vertical)
                                 .frame(width: UIScreen.main.bounds.width - 50)
                         }
-                        .background(Color("Color"))
+                        .foregroundColor(Color("Color"))
+                        .background(Color.black)
                         .cornerRadius(10)
                         .padding(.top, 25)
                         
@@ -374,17 +194,16 @@ struct SigningIn: View {
                 }) {
                     
                     Text("Register")
-                        .fontWeight(.bold)
+                        .font(.custom("Futura-Bold", size: 15))
                         .foregroundColor(Color("Color"))
                 }
                 .padding()
             }
             .sheet(isPresented: $showingRegesterView, content: {
                                SigningUp()
-            //.fullScreenCover(isPresented: $showingRegesterView, content: {
-               // SigningUp()
+            
             })
-           // })
+        
             
             if self.alert{
                 
@@ -460,183 +279,7 @@ struct SigningUp: View {
     
     var body: some View {
         
-//        VStack{
-//           Text("РЕГИСТРАЦИЯ")
-//                .font(.custom(FontsManager.newDemi, size: 30))
-//                .tracking(2)
-//                .padding()
-//
-//            Text("ПОЧТА")
-//                .font(.custom(FontsManager.newLight, size: 12))
-//                .tracking(2)
-//
-//            TextField("", text: $email)
-//                .font(.custom(FontsManager.newLight, size: 15))
-//                .disableAutocorrection(true)
-//                .autocapitalization(.none)
-//                .padding()
-//                .frame(width:370)
-//                .background(RoundedRectangle(cornerRadius: 16).stroke(self.email != "" ? Color("Color") : self.color,lineWidth: 2))
-//                .padding()
-//
-//
-//            Text("ПАРОЛЬ")
-//                .font(.custom(FontsManager.newLight, size: 12))
-//                .tracking(2)
-//
-//            HStack(spacing: 15){
-//
-//                VStack{
-//
-//                    if self.visible{
-//
-//                        TextField("", text: self.$password)
-//                        .autocapitalization(.none)
-//                    }
-//                    else{
-//
-//                        SecureField("", text: self.$password)
-//                        .autocapitalization(.none)
-//                    }
-//                }
-//
-//                Button(action: {
-//
-//                    self.register()
-//
-//                    self.visible.toggle()
-//
-//                }) {
-//
-//                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-//                        .foregroundColor(self.color)
-//                }
-//
-//            }
-//            .padding()
-//            .frame(width:370)
-//            .background(RoundedRectangle(cornerRadius: 16).stroke(self.password != "" ? Color("Color") : self.color,lineWidth: 2))
-//            .padding()
-//
-//
-//
-//            Text("ПОВТОРИТЕ ПАРОЛЬ")
-//                .font(.custom(FontsManager.newLight, size: 12))
-//                .tracking(2)
-//
-//
-//
-//            HStack(spacing: 15){
-//
-//                VStack{
-//
-//                    if self.revisible{
-//
-//                        TextField("", text: self.$repassword)
-//                        .autocapitalization(.none)
-//                    }
-//                    else{
-//
-//                        SecureField("", text: self.$repassword)
-//                        .autocapitalization(.none)
-//                    }
-//                }
-//
-//                Button(action: {
-//
-//                    self.revisible.toggle()
-//
-//                }) {
-//
-//                    Image(systemName: self.revisible ? "eye.slash.fill" : "eye.fill")
-//                        .foregroundColor(self.color)
-//                }
-//
-//            }
-//            .padding()
-//            .frame(width:370)
-//            .background(RoundedRectangle(cornerRadius: 16).stroke(self.repassword != "" ? Color("Color") : self.color,lineWidth: 2))
-//            .padding()
-//
-//
-//
-//
-////           SecureField("введите свой пароль", text: $password)
-////               .disableAutocorrection(true)
-////               .autocapitalization(.none)
-////               .padding()
-//
-//           Spacer()
-//                .frame( height: 300)
-//            Button(action: {
-//
-//                self.register()
-//
-//                guard !email.isEmpty, !password.isEmpty else {return}
-//                viewModel.signUp(email: email, password: password)
-//            }, label: {
-//                Text("ЗАРЕГИСТРИРОВАТЬСЯ")
-//                    .padding()
-//                    .foregroundColor(.white)
-//                    .clipShape(Rectangle())
-//                    .frame(width: 350)
-//                    .background(Color.black)
-//                    .cornerRadius(45)
-//
-//            })
-//
-//                Spacer()
-//
-//
-//
-//
-//
-//
-//        }
-//        if self.alert{
-//
-//            ErrorView(alert: self.$alert, error: self.$error)
-//        }
-//
-//
-//    }
-//
-//    func register(){
-//
-//        if self.email != ""{
-//
-//            if self.password == self.repassword{
-//
-//                Auth.auth().createUser(withEmail: self.email, password: self.password) { (res, err) in
-//
-//                    if err != nil{
-//
-//                        self.error = err!.localizedDescription
-//                        self.alert.toggle()
-//                        return
-//                    }
-//
-//                    print("success")
-//
-//                    UserDefaults.standard.set(true, forKey: "status")
-//                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
-//                }
-//            }
-//            else{
-//
-//                self.error = "Password mismatch"
-//                self.alert.toggle()
-//            }
-//        }
-//        else{
-//
-//            self.error = "Please fill all the contents properly"
-//            self.alert.toggle()
-//        }
-//    }
-//
-//
-//
+
         ZStack{
             
             ZStack(alignment: .topLeading) {
@@ -651,9 +294,9 @@ struct SigningUp: View {
                             .frame(width: 200, height: 200)
                         
                         Text("Log in to your account")
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .foregroundColor(self.color)
+                            .font(.custom("Futura-Bold", size: 30))
+                            .foregroundColor(Color(.black))
+                           // .foregroundColor(self.color)
                             .padding(.top, 35)
                         
                         TextField("Email", text: self.$email)
@@ -670,11 +313,13 @@ struct SigningUp: View {
                                     
                                     TextField("Password", text: self.$password)
                                     .autocapitalization(.none)
+                                    .font(.custom(FontsManager.newLight, size: 15))
                                 }
                                 else{
                                     
                                     SecureField("Password", text: self.$password)
                                     .autocapitalization(.none)
+                                    .font(.custom(FontsManager.newLight, size: 15))
                                 }
                             }
                             
@@ -701,11 +346,13 @@ struct SigningUp: View {
                                     
                                     TextField("Re-enter", text: self.$repassword)
                                     .autocapitalization(.none)
+                                    .font(.custom(FontsManager.newLight, size: 15))
                                 }
                                 else{
                                     
                                     SecureField("Re-enter", text: self.$repassword)
                                     .autocapitalization(.none)
+                                    .font(.custom(FontsManager.newLight, size: 15))
                                 }
                             }
                             
@@ -728,20 +375,19 @@ struct SigningUp: View {
                             
                             self.register()
                             
-                            //guard !email.isEmpty, !password.isEmpty ,repassword == password  else {return}
-                           // viewModel.signUp(email: email, password: password,repassword: repassword)
+        
                             
                             
-//                               }
-//
+
                         }) {
                             
                             Text("Register")
+                                .font(.custom(FontsManager.newBook , size: 17))
                                 .foregroundColor(.white)
                                 .padding(.vertical)
                                 .frame(width: UIScreen.main.bounds.width - 50)
                         }
-                        .background(Color("Color"))
+                        .background(Color.black)
                         .cornerRadius(10)
                         .padding(.top, 25)
                         
@@ -749,17 +395,7 @@ struct SigningUp: View {
                     .padding(.horizontal, 25)
                 }
                 
-//                Button(action: {
-//
-//                    self.showingRegesterView.toggle()
-//
-//                }) {
-//
-//                    Image(systemName: "chevron.left")
-//                        .font(.title)
-//                        .foregroundColor(Color("Color"))
-//                }
-                //.padding()
+             
             }
             
             if self.alert{
@@ -776,7 +412,7 @@ struct SigningUp: View {
             
             if self.password == self.repassword{
                 
-                //viewModel.signUp(email: email, password: password)
+               
                 
                 Auth.auth().createUser(withEmail: self.email, password: self.password) { (res, err) in
                    
@@ -787,7 +423,7 @@ struct SigningUp: View {
                         self.alert.toggle()
                         return
                     }
-                    //viewModel.signUp(email: email, password: password)
+                   
                     
                     print("success")
                     
@@ -829,7 +465,7 @@ struct ErrorView : View {
                 
                 HStack{
                     
-                    Text(self.error == "RESET" ? "Message" : "ОШИБКА")
+                    Text(self.error == "RESET" ? "Message" : "ERROR")
                         .font(.custom("Futura-Bold", size: 15))
                         .tracking(2)
                         .foregroundColor(self.color)
@@ -839,6 +475,7 @@ struct ErrorView : View {
                 .padding(.horizontal, 25)
                 
                 Text(self.error == "RESET" ? "Password reset link has been sent successfully" : self.error)
+                .font(.custom(FontsManager.newLight, size: 15))
                 .foregroundColor(self.color)
                 .padding(.top)
                 .padding(.horizontal, 25)
@@ -849,12 +486,13 @@ struct ErrorView : View {
                     
                 }) {
                     
-                    Text(self.error == "RESET" ? "Ok" : "ОТМЕНА")
+                    Text(self.error == "RESET" ? "Ok" : "CANCEL")
+                        .font(.custom(FontsManager.newBook , size: 17))
                         .foregroundColor(.white)
                         .padding(.vertical)
                         .frame(width: UIScreen.main.bounds.width - 120)
                 }
-                .background(Color("Color"))
+                .background(Color(.black))
                 .cornerRadius(10)
                 .padding(.top, 25)
                 

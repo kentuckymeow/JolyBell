@@ -31,8 +31,7 @@ struct itemView: View {
                         .font(.custom("Futura-Bold", size: 15))
                         .foregroundColor(.black)
                         
-                    //Spacer()
-                }
+                                    }
                 
                 
             }
@@ -41,8 +40,4 @@ struct itemView: View {
     }
 }
 
-//struct itemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        itemView()
-//    }
-//}
+
